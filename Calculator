@@ -1,0 +1,133 @@
+/******************************************************************************
+
+Fully encapsulated class to perform operations Calculator
+
+*******************************************************************************/
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+class Calculator{
+    
+    private:
+    vector <float> inputs;
+    float inn;
+    float sum_sub;
+    float product;
+    float division;
+    float reminder;
+    
+    int n;
+    public:
+    
+    void set_inputs(float f)
+    {
+        inputs.push_back(f);
+    }
+    
+    float summation()
+    {
+        cout<<"How many inputs do you want to pass for add/sub:"<<endl;
+        cin>>n;
+        
+        for(int i = 0; i < n ;i++)
+        {
+            cout<<"Give input" << endl;
+            cin >> inn;
+            set_inputs(inn);
+        }
+        sum_sub = 0.0;
+        for(auto i = 0 ; i < inputs.size() ; i++)
+        {
+            sum_sub += inputs[i];
+        }
+        inputs.clear();
+        return sum_sub;
+        
+    }
+    float products()
+    {
+        cout<<"How many inputs do you want to pass for multiply :"<<endl;
+        cin>>n;
+        
+        for(int i = 0; i < n ;i++)
+        {
+            cout<<"Give input" << endl;
+            cin >> inn;
+            set_inputs(inn);
+        }
+        product = 1;
+        for(auto i = 0 ; i < inputs.size() ; i++)
+        {
+            product *= inputs[i];
+        }
+        inputs.clear();
+        return product;
+        
+    }
+    float divisions()
+    {
+        cout << "Please pass 2 inputs for division: " << endl;
+        for(int i = 0; i < 2 ;i++)
+        {
+            
+            cin >> inn;
+            set_inputs(inn);
+        }
+        division = inputs.at(1)/inputs.at(0);
+        inputs.clear();
+        return division;
+        
+    }
+   float reminders()
+{
+    cout << "Please pass 2 inputs for reminder: " << endl;
+    for(int i = 0; i < 2 ;i++)
+    {
+        cin >> inn;
+        set_inputs(inn);
+    }
+    int x = (int)inputs.at(1);
+    int y = (int)inputs.at(0);
+    reminder = x%y;
+    inputs.clear();
+    return reminder;
+}
+
+
+
+    
+    
+};
+
+int main()
+{
+    Calculator operation;
+    int ch;
+    cout << "1. ADD/SUB \n2.MULTIPY \n3.DIVIDE \n4.REMINDER" << endl; 
+    cin >> ch;
+    
+    switch(ch)
+    {
+        case 1:    { float sum = operation.summation();
+                    cout << "Sum/difference of your inputs are-> " << sum << endl;
+                    break;}
+        case 2:    { float pro = operation.products();
+                    cout << "Product of your inputs are-> " << pro << endl;
+                    break;}
+        case 3:    { float dib = operation.divisions();
+                    cout << "Division of your inputs are-> " << dib << endl;
+                    break;}
+        case 4:    { float rem = operation.reminders();
+                    cout << "Reminder of your inputs are-> " << rem << endl;
+                    break;}
+        default:    cout << "Wrong choice";
+
+    }
+    
+    
+    
+
+    return 0;
+}
