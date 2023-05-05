@@ -6,5 +6,5 @@
 2. <h6> Bank Management System </h6>
 3. <h6> Gym Management System </h6>
 4. <h6> Class Management System </h6>
-5. <h6> Heridatary system of a family </h6>
+5. <h6> Heridatary system  </h6>
 6. <h6> Calculator </h6>
