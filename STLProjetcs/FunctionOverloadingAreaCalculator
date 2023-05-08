@@ -1,0 +1,45 @@
+/******************************************************************************
+
+C++ function overloading
+
+*******************************************************************************/
+#include <iostream>
+#define pi 3.14
+
+using namespace std;
+
+void area(double length, double bredth)
+{
+    cout<<"Area of rectangle is : " << length*bredth<<endl;
+}
+void area(double radius)
+{
+    cout<<"Area of circle is : " << pi*radius*radius<<endl;
+}
+void volume(double length, double bredth, double height)
+{
+    cout<<"Volume of cuboid is : " << length*bredth*height <<endl;
+}
+void volume(double side)
+{
+    cout<<"Volume of cube is : " << side*side*side <<endl;
+}
+int main()
+{
+    // for rectangle;
+    double len = 10.0, bred = 20.0;
+    area(len,bred);
+    
+    //for circle
+    double radius = 5.0;
+    area(radius);
+    
+    //for cube 
+    double height = 8.0;
+    volume(len);
+    
+    //for cuboid
+    volume(len,bred,height);
+
+    return 0;
+}
