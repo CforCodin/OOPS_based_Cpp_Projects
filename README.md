@@ -8,3 +8,4 @@
 4. <h6> Class Management System </h6>
 5. <h6> Heridatary system  </h6>
 6. <h6> Calculator </h6>
+7. <h6> Vending Machine </h6>
